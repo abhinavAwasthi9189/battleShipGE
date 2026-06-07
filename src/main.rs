@@ -123,13 +123,13 @@ impl Gamer {
             }
         }
         match self.ships[(5 - size) as usize].orientation {
-            Orientation::Vertical => {
+            Orientation::Horizontal => {
                 // Check vertically if the ship is sunk
                 for i in 0..size {
                     self.board[y][x + i as usize] = Cell::Hit;
                 }
             }
-            Orientation::Horizontal => {
+            Orientation::Vertical => {
                 // Check horizontally if the ship is sunk
                 for i in 0..size {
                     self.board[y + i as usize][x] = Cell::Hit;
